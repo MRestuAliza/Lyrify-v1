@@ -10,7 +10,6 @@ const Home = () => {
   const [inputFields, setInputFields] = useState([{ coverSong: "", songName: "", artistName: "", lyrics: "" }]);
   const [backgroundColor, setBackgroundColor] = useState("bg-white");
   const [submittedData, setSubmittedData] = useState(null);
-  const [submitClicked, setSubmitClicked] = useState(false);
   const [error, setError] = useState({});
   const ref = useRef("");
 
@@ -39,7 +38,6 @@ const Home = () => {
   const submit = (e) => {
     e.preventDefault();
     setSubmittedData(inputFields);
-    setSubmitClicked(false);
     const validationErrors = validateError(inputFields);
     setError(validationErrors);
   };
