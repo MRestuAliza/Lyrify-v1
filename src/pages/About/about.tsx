@@ -16,9 +16,9 @@ const About = () => {
         <div>
           <h1 className="font-bold text-3xl md:text-5xl pb-4">FAQ Lyrify</h1>
           <div className="py-3">
-            <h3 className="font-semibold text-lg">What's Input Link Cover Art form means?</h3>
+            <h3 className="font-semibold text-lg">What&apos;s Input Link Cover Art form means?</h3>
             <p className="text-base md:text-lg">
-              Input Link Cover Art from is a form provided to allow users to input a link image of the cover art of a song. This feature enables users to upload cover art images with their preferences. However, it's an optional option
+              Input Link Cover Art from is a form provided to allow users to input a link image of the cover art of a song. This feature enables users to upload cover art images with their preferences. However, it&apos;s an optional option
               because we have already prepared the default image.
             </p>
           </div>
