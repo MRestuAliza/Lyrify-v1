@@ -1,11 +1,20 @@
 import React from "react";
 
-type InputField = {
-  coverSong: string;
-  songName: string;
-  artistName: string;
-  lyrics: string;
-};
+interface FormInputField {
+  label: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  error: boolean;
+  placeholder?: string;
+}
+
+interface FormTextField {
+  label: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  error: boolean;
+  placeholder?: string;
+}
 
 type ErrorField = {
   coverSong: boolean;
@@ -14,12 +23,20 @@ type ErrorField = {
   lyrics: boolean;
 };
 
-type FormContainerProps = {
-  inputFields: InputField;
-  error: ErrorField;
-};
+interface InputFields {
+  coverSong: FormInputField["value"];
+  songName: FormInputField["value"];
+  artistName: FormInputField["value"];
+  lyrics: FormTextField["value"];
+}
 
-const FormInput = ({ label, value, onChange, error, placeholder }: InputField) => {
+interface FormContainerProps {
+  inputFields: InputFields;
+  handleFormChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, fieldName: keyof InputFields) => void;
+  error: ErrorField;
+}
+
+const FormInput: React.FC<FormInputField> = ({ label, value, onChange, error, placeholder }: FormInputField) => {
   return (
     <div>
       <h2 className="font-semibold text-lg">{label}</h2>
@@ -29,7 +46,7 @@ const FormInput = ({ label, value, onChange, error, placeholder }: InputField) =
   );
 };
 
-const FormTextarea = ({ label, value, onChange, error, placeholder }: InputField) => {
+const FormTextarea = ({ label, value, onChange, error, placeholder }: FormTextField) => {
   return (
     <div>
       <h2 className="font-semibold text-lg">{label}</h2>

@@ -1,20 +1,49 @@
 import React, { useState, useRef } from "react";
 import { toPng } from "html-to-image";
 import { SiApplemusic } from "react-icons/si";
-import { CollorSelector, ButtonSubmit, ButtonDownload } from "../../components/Button/Button";
+import { CollorSelector, CustomButton } from "../../components/Button/Button";
 import { FormContainer } from "../../components/form/Form";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 
-const Home = () => {
-  const [inputFields, setInputFields] = useState([{ coverSong: "", songName: "", artistName: "", lyrics: "" }]);
-  const [backgroundColor, setBackgroundColor] = useState("bg-white");
-  const [submittedData, setSubmittedData] = useState(null);
-  const [error, setError] = useState({});
-  const ref = useRef("");
+// interface ErrorType {
+//   songName?: boolean;
+//   artistName?: boolean;
+//   lyrics?: boolean;
+// }
+type ErrorType = {
+  coverSong?: boolean;
+  songName?: boolean;
+  artistName?: boolean;
+  lyrics?: boolean;
+};
 
-  const validateError = (values) => {
-    let errors = {};
+interface InputFields {
+  coverSong: string;
+  songName: string;
+  artistName: string;
+  lyrics: string;
+}
+
+const Home = () => {
+  const [inputFields, setInputFields] = useState<InputFields>({
+    coverSong: "",
+    songName: "",
+    artistName: "",
+    lyrics: "",
+  });
+  const [backgroundColor, setBackgroundColor] = useState("bg-white");
+  const [submittedData, setSubmittedData] = useState<InputFields | null>(null);
+  const [error, setError] = useState<ErrorType>({
+    coverSong: false,
+    songName: false,
+    artistName: false,
+    lyrics: false,
+  });
+  const ref = useRef<HTMLDivElement>(null);
+
+  const validateError = (values: InputFields) => {
+    let errors: ErrorType = {};
     if (!values.songName) {
       errors.songName = true;
     }
@@ -27,7 +56,7 @@ const Home = () => {
     return errors;
   };
 
-  const handleFormChange = (event, fieldName) => {
+  const handleFormChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, fieldName: keyof InputFields) => {
     const value = event.target.value;
     setInputFields((prev) => ({
       ...prev,
@@ -35,34 +64,36 @@ const Home = () => {
     }));
   };
 
-  const submit = (e) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmittedData(inputFields);
     const validationErrors = validateError(inputFields);
     setError(validationErrors);
   };
 
-  const changeBackground = (color) => {
+  const changeBackground = (color: string) => {
     setBackgroundColor(color);
   };
 
   const downloadImage = async () => {
     try {
-      const dataUrl = await toPng(ref.current, {
-        pixelRatio: 2,
-        quality: 0.95,
-      });
+      if (ref.current) {
+        const dataUrl = await toPng(ref.current, {
+          pixelRatio: 2,
+          quality: 0.95,
+        });
 
-      const width = 1280;
-      const height = 720;
-      const cleanSongName = inputFields.songName.replace(/\s+/g, "-");
+        const width = 1280;
+        const height = 720;
+        const cleanSongName = inputFields.songName.replace(/\s+/g, "-");
 
-      const link = document.createElement("a");
-      link.download = `${cleanSongName}-Lyrics`;
-      link.href = dataUrl;
-      link.style.width = `${width}px`;
-      link.style.height = `${height}px`;
-      link.click();
+        const link = document.createElement("a");
+        link.download = `${cleanSongName}-Lyrics`;
+        link.href = dataUrl;
+        link.style.width = `${width}px`;
+        link.style.height = `${height}px`;
+        link.click();
+      }
     } catch (error) {
       if (!navigator.onLine) {
         alert("Failed to download lyrics. Please check your internet connection and try again.");
@@ -82,8 +113,8 @@ const Home = () => {
           <div className="flex flex-col pb-5">
             <h2 className="font-bold pb-5 text-lg">Select Background Color: </h2>
             <CollorSelector changeBackground={changeBackground} />
-            <ButtonSubmit submit={submit} />
-            <ButtonDownload downloadImage={downloadImage} />
+            <CustomButton onClick={submit} className="p-2 bg-blue-500 text-white rounded-md" label="Submit" />
+            <CustomButton onClick={downloadImage} className="p-2 bg-green-500 text-white rounded-md mt-4" label="Download Image" />
           </div>
           {submittedData && inputFields.songName && inputFields.artistName && inputFields.lyrics && Object.keys(error).length === 0 && (
             <div ref={ref} className={`lyrics min-h-screen mx-auto px-9 md:px-0 flex items-center justify-center ${backgroundColor}`}>

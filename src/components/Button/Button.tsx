@@ -1,6 +1,23 @@
 import React from "react";
 
-const CollorSelector = ({ changeBackground }) => {
+interface ColorSelectorProps {
+  changeBackground: (color: string) => void;
+}
+
+// interface ButtonSubmitProps {
+//   submit: () => void;
+// }
+// interface ButtonDownloadProps {
+//   downloadImage: () => void;
+// }
+
+interface ButtonProps {
+  onClick: () => void;
+  label: string;
+  className: string;
+}
+
+const CollorSelector: React.FC<ColorSelectorProps> = ({ changeBackground }) => {
   return (
     <div className="mx-auto pb-4 grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-5">
       <button className="bg-white hover:bg-gray-200 text-black border py-2 px-4 rounded-full h-14 w-14" onClick={() => changeBackground("bg-white")}></button>
@@ -23,19 +40,26 @@ const CollorSelector = ({ changeBackground }) => {
   );
 };
 
-const ButtonSubmit = ({ submit }) => {
+// const ButtonSubmit: React.FC<ButtonSubmitProps> = ({ submit }) => {
+//   return (
+//     <button onClick={submit} type="submit" className="p-2 bg-blue-500 text-white rounded-md">
+//       Submit
+//     </button>
+//   );
+// };
+// const ButtonDownload: React.FC<ButtonDownloadProps> = ({ downloadImage }) => {
+//   return (
+//     <button onClick={downloadImage} className="p-2 bg-green-500 text-white rounded-md mt-4">
+//       Download Image
+//     </button>
+//   );
+
+const CustomButton: React.FC<ButtonProps> = ({ onClick, label, className }) => {
   return (
-    <button onClick={submit} type="submit" className="p-2 bg-blue-500 text-white rounded-md">
-      Submit
-    </button>
-  );
-};
-const ButtonDownload = ({ downloadImage }) => {
-  return (
-    <button onClick={downloadImage} className="p-2 bg-green-500 text-white rounded-md mt-4">
-      Download Image
+    <button onClick={onClick} className={className}>
+      {label}
     </button>
   );
 };
 
-export { CollorSelector, ButtonSubmit, ButtonDownload };
+export { CollorSelector, CustomButton };
