@@ -55,7 +55,7 @@ Lyrify is a modern web application that lets you create stunning visual represen
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/MRestuAliza/Lyrify-v1.git
 cd lyrics-share-main
 ```
 
