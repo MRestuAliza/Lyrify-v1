@@ -38,7 +38,7 @@ Lyrify is a modern web application that lets you create stunning visual represen
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 13+](https://nextjs.org/) with JavaScript
+- **Framework**: [Next.js 13+](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Image Processing**: html-to-image for PNG export
 - **Icons**: React Icons (Apple Music icon)
@@ -89,57 +89,6 @@ npm run build
 yarn build
 ```
 
-## 📁 Project Structure
-
-```
-lyrics-share-main/
-├── public/             # Static assets
-│   ├── favicon.ico     # Site favicon
-│   ├── next.svg        # Next.js logo
-│   └── vercel.svg      # Vercel logo
-├── src/
-│   ├── components/     # Reusable UI components
-│   │   ├── Button/     # Custom buttons and color selector
-│   │   │   └── Button.tsx
-│   │   ├── footer/     # Footer component
-│   │   │   └── Footer.tsx
-│   │   ├── form/       # Form components
-│   │   │   └── Form.tsx
-│   │   └── Navbar/     # Navigation component
-│   │       └── Navbar.tsx
-│   ├── pages/          # Next.js pages
-│   │   ├── About/      # About page
-│   │   │   └── about.tsx
-│   │   ├── Home/       # Main application page
-│   │   │   └── Home.tsx
-│   │   ├── _app.tsx    # Custom App component
-│   │   ├── _document.tsx # Custom Document
-│   │   └── index.tsx   # Homepage entry point
-│   └── styles/         # Global styles and Tailwind config
-├── .eslintrc.json      # ESLint configuration
-├── .gitignore          # Git ignore rules
-├── next-env.d.ts       # Next.js TypeScript declarations
-├── next.config.js      # Next.js configuration
-├── package.json        # Project dependencies
-├── package-lock.json   # Locked dependency versions
-├── postcss.config.js   # PostCSS configuration
-├── README.md           # Project documentation
-├── tailwind.config.ts  # Tailwind CSS configuration
-├── tsconfig.json       # TypeScript configuration
-└── yarn.lock           # Yarn dependency lock file
-```
-
-## 🔧 Configuration Files
-
-The project includes several important configuration files:
-
-- **`next.config.js`**: Next.js configuration for build optimization
-- **`tailwind.config.ts`**: Tailwind CSS customization and theme settings
-- **`tsconfig.json`**: TypeScript compiler configuration
-- **`postcss.config.js`**: PostCSS plugins configuration
-- **`.eslintrc.json`**: Code linting rules and standards
-- **`package.json`**: Project metadata and dependencies
-
 ### Environment Variables
 
 No environment variables are required for basic functionality.
@@ -167,7 +116,7 @@ Contributions are welcome! Here are some ways you can contribute:
 ## 🐛 Known Issues
 
 - Large image files (>5MB) may cause performance issues
-- Some URL images may not load due to CORS restrictions
+- Some URL images may not load
 - Export quality may vary depending on browser
 
 ## 📄 License
