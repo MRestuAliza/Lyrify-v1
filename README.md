@@ -140,54 +140,6 @@ The project includes several important configuration files:
 - **`.eslintrc.json`**: Code linting rules and standards
 - **`package.json`**: Project metadata and dependencies
 
-## 🎨 Customization
-
-### Adding New Background Colors
-
-Edit the `CollorSelector` component in `src/components/Button/Button.tsx`:
-
-```typescript
-// Add new colors to the color array
-const colors = [
-  'bg-white', 'bg-black', 'bg-red-500', 
-  // Add your custom colors here
-  'bg-purple-gradient', 'bg-sunset-orange'
-];
-```
-
-### Modifying Export Resolution
-
-Update the download function in `src/pages/Home/Home.tsx`:
-
-```typescript
-const dataUrl = await toPng(ref.current, {
-  pixelRatio: 3, // Increase for higher resolution
-  quality: 0.98, // Adjust quality (0-1)
-});
-```
-
-## 🔧 API Reference
-
-### Component Props
-
-**FormContainer Props:**
-- `inputFields`: Object containing song data
-- `handleFormChange`: Function to handle input changes
-- `error`: Object containing validation errors
-
-**CustomButton Props:**
-- `onClick`: Click handler function
-- `className`: Additional CSS classes
-- `label`: Button text
-
-## 🚀 Deployment
-
-This project is optimized for deployment on Vercel:
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com/)
-3. Deploy automatically with every push
-
 ### Environment Variables
 
 No environment variables are required for basic functionality.
@@ -201,15 +153,7 @@ Contributions are welcome! Here are some ways you can contribute:
 - 🔧 Submit pull requests
 - 📖 Improve documentation
 
-### Development Guidelines
-
-1. Follow TypeScript best practices
-2. Use Tailwind CSS for styling
-3. Ensure mobile responsiveness
-4. Add proper error handling
-5. Write clear commit messages
-
-## 📋 Roadmap
+## 📋 Future Update
 
 - [ ] Integration with Spotify/Apple Music APIs
 - [ ] Multiple layout templates
