@@ -38,7 +38,7 @@ Lyrify is a modern web application that lets you create stunning visual represen
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 13+](https://nextjs.org/) with TypeScript
+- **Framework**: [Next.js 13+](https://nextjs.org/) with JavaScript
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Image Processing**: html-to-image for PNG export
 - **Icons**: React Icons (Apple Music icon)
