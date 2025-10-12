@@ -4,12 +4,6 @@ interface ColorSelectorProps {
   changeBackground: (color: string) => void;
 }
 
-// interface ButtonSubmitProps {
-//   submit: () => void;
-// }
-// interface ButtonDownloadProps {
-//   downloadImage: () => void;
-// }
 
 interface ButtonProps {
   onClick: () => void;
@@ -39,20 +33,6 @@ const CollorSelector: React.FC<ColorSelectorProps> = ({ changeBackground }) => {
     </div>
   );
 };
-
-// const ButtonSubmit: React.FC<ButtonSubmitProps> = ({ submit }) => {
-//   return (
-//     <button onClick={submit} type="submit" className="p-2 bg-blue-500 text-white rounded-md">
-//       Submit
-//     </button>
-//   );
-// };
-// const ButtonDownload: React.FC<ButtonDownloadProps> = ({ downloadImage }) => {
-//   return (
-//     <button onClick={downloadImage} className="p-2 bg-green-500 text-white rounded-md mt-4">
-//       Download Image
-//     </button>
-//   );
 
 const CustomButton: React.FC<ButtonProps> = ({ onClick, label, className }) => {
   return (

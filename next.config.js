@@ -7,7 +7,14 @@ const nextConfig = {
         source: "/About",
         destination: "/About/about",
       },
+      {
+        source: "/Guide",
+        destination: "/Guide/guide",
+      },
     ];
+  },
+  images: {
+    domains: ['s.mxmcdn.net'],
   },
 };
 
