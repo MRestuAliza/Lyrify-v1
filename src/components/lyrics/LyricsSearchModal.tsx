@@ -29,7 +29,7 @@ const LyricsSearchModal: React.FC<LyricsSearchModalProps> = ({ isOpen, onClose, 
         try {
             const title = encodeURIComponent(query.title);
             const artist = encodeURIComponent(query.artist);
-            const response = await fetch(`${process.env.NEXT_PUBLIC_LYRICS_API_ENDPOINT}/lyrics?title=${title}&artist=${artist}`);
+            const response = await fetch(`/api/lyrics?title=${title}&artist=${artist}`);
             const data = await response.json();
             console.log(data);
             
