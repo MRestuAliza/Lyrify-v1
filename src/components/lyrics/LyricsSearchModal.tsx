@@ -30,9 +30,7 @@ const LyricsSearchModal: React.FC<LyricsSearchModalProps> = ({ isOpen, onClose, 
             const title = encodeURIComponent(query.title);
             const artist = encodeURIComponent(query.artist);
             const response = await fetch(`/api/lyrics?title=${title}&artist=${artist}`);
-            const data = await response.json();
-            console.log(data);
-            
+            const data = await response.json();            
 
             if (!response.ok || !data.data.lyrics) {
                 throw new Error(data.message || "Lyrics not found for this song.");
