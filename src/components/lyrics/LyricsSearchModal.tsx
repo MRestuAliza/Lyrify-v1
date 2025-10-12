@@ -9,14 +9,14 @@ interface LyricsSearchModalProps {
 }
 
 const LyricsSearchModal: React.FC<LyricsSearchModalProps> = ({ isOpen, onClose, onLyricsFound }) => {
-    if (!isOpen) return null;
-
     const [query, setQuery] = useState({ title: "", artist: "" });
     const [artworkUrl, setArtworkUrl] = useState("");
     const [result, setResult] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const [isCopied, setIsCopied] = useState(false);
+
+    if (!isOpen) return null;
 
     const handleSearch = async () => {
         if (!query.title || !query.artist) {

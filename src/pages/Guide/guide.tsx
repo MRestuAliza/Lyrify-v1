@@ -41,11 +41,11 @@ const Guide = () => {
             </p>
             <h3 className="font-semibold text-xl mb-2">Method A: Manual Input (Type or Paste)</h3>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              If you already have the lyrics, you can type or copy-paste them directly into the large text box labeled "Lyrics". You don't need to include the entire song—just pick your favorite part.
+              If you already have the lyrics, you can type or copy-paste them directly into the large text box labeled &quot;Lyrics&quot;. You don&apos;t need to include the entire song—just pick your favorite part.
             </p>
-            <h3 className="font-semibold text-xl mb-2">Method B: Automatic with the "Find Lyrics" Feature</h3>
+            <h3 className="font-semibold text-xl mb-2">Method B: Automatic with the &quot;Find Lyrics&quot; Feature</h3>
             <p className="text-base md:text-lg leading-relaxed">
-              If you don't know the lyrics or want a faster method, click the <strong>"Find Lyrics"</strong> 🔎 button. A pop-up will appear where you can search for the song. If found, click <strong>"Copy & Use Lyrics"</strong> to automatically fill everything in.
+              If you don&apos;t know the lyrics or want a faster method, click the <strong>&quot;Find Lyrics&quot;</strong> 🔎 button. A pop-up will appear where you can search for the song. If found, click <strong>&quot;Copy &amp; Use Lyrics&quot;</strong> to automatically fill everything in.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Guide = () => {
               Step 4: Customize the Appearance
             </h2>
             <p className="text-base md:text-lg leading-relaxed">
-              Now it's time to give your image a personal touch. Below the form, find the <strong>"Select Background Color"</strong> section and click on any color palette to change the preview's background.
+              Now it&apos;s time to give your image a personal touch. Below the form, find the <strong>&quot;Select Background Color&quot;</strong> section and click on any color palette to change the preview&apos;s background.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const Guide = () => {
                 <strong>Generate Preview</strong>: Click this button to see the final result of your image below the form.
               </li>
               <li>
-                <strong>Download Image</strong>: If you're happy with the preview, click this button to save the high-quality PNG image to your device.
+                <strong>Download Image</strong>: If you&apos;re happy with the preview, click this button to save the high-quality PNG image to your device.
               </li>
             </ol>
             <p className="mt-4 text-base md:text-lg leading-relaxed">
